@@ -1,0 +1,57 @@
+<ion-header [translucent]="true" class="center">
+  <ion-toolbar color="danger">
+    <ion-title color="light" class="fonte">Calculadora Ionic</ion-title>
+
+      <ion-button color="light" class="botaoLimpar" slot="end" (click)="limpar()">Limpar</ion-button>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-item>
+    <ion-label color="danger" position="fixed">Primeiro</ion-label>
+    <ion-input  type="number" [(ngModel)]="primeiroValor"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label color="danger" position="fixed">Segundo</ion-label>
+    <ion-input type="number" [(ngModel)]="segundoValor"></ion-input>
+  </ion-item>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-button color="danger" expand="block" (click)="soma()" (click)="mostrarAlert()"> + </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button color="danger" expand="block"  (click)="subtrair()" (click)="mostrarAlert()" > - </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button color="danger" expand="block" (click)="multiplicacao()" (click)="mostrarAlert()" > × </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button color="danger" expand="block"  (click)="divisao()" (click)="mostrarAlert()" > ÷ </ion-button>
+      </ion-col>
+    </ion-row>
+
+
+    <ion-row>
+      <ion-col>
+        <ion-button color="danger" expand="block"  (click)="mostrarMaior()" >Maior</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button color="danger" expand="block"  (click)="mostrarMenor()" >Menor</ion-button>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+  <ion-item>
+    <ion-label position="fixed">Resultado</ion-label>
+    <ion-input [readonly]="true" [(ngModel)] ="resultado"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="fixed">Conta</ion-label>
+    <ion-input [readonly]="true" [(ngModel)] ="conta" > </ion-input>
+  </ion-item>
+</ion-content>
